@@ -2,78 +2,147 @@
 <html lang="en">
 
 <head>
-    <title>Aziz's Webpage</title>
-    <link rel="canonical" href="https://cora23tt.github.io/cv/">
-
-    <link rel="stylesheet" type="text/css" href="https://cora23tt.github.io/cv/style.css">
-
-    <meta name="description"
-        content="Introduction Me. I am Aziz Rustamov and this is my webpage. There isn't a lot here but by the way, thanks for stopping on my website!">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
-    <meta charset="utf-8">
-
+    <meta name="description"
+          content="Retro CV landing page for Aziz Rustamov — Golang developer with a taste for clean backend code and blooming sakura.">
+    <title>Aziz Rustamov · Retro CV Lane</title>
+    <link rel="canonical" href="https://cora23tt.github.io/cv/">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <main>
+<div class="crt">
+    <main class="terminal-card">
+        <header class="hero">
+            <img class="avatar" src="me.webp" alt="Aziz Rustamov portrait">
+            <div>
+                <p class="hero-label">‹ CV MODE ›</p>
+                <h1>Aziz Rustamov</h1>
+                <p class="tagline">Golang Developer @ Alif Tech • Software Engineering, TATU '24</p>
+                <p class="location">Tashkent, Uzbekistan · telegram: <a href="https://t.me/aziz_3651">@aziz_3651</a></p>
+            </div>
+        </header>
 
-        <a href="https://cora23tt.github.io/cv/">
-            <header>
-                <h1>Aziz Rustamov's Webpage</h1>
-            </header>
-        </a>
+        <div class="music-player">
+            <iframe title="Yandex Music player" frameborder="0" allow="clipboard-write"
+                    style="border:none;width:220px;height:88px;" width="220" height="88"
+                    src="https://music.yandex.uz/iframe/album/718004/track/6675701">Listen to <a
+                    href="https://music.yandex.uz/track/6675701?utm_source=web&utm_medium=copy_link">Rokudan</a> — <a
+                    href="https://music.yandex.uz/artist/1198509">Izumi-Kai Original Instrument Group</a> on Yandex
+                Music
+            </iframe>
+        </div>
 
-        <article>
-            <h2 id="introduction">Introduction</h2>
+        <div class="ticker" aria-label="scrolling availability note">
+            <div class="ticker-track">
+                <span>Open to practical backend work · Enjoys calm Go services · Happy to discuss integrations ·</span>
+                <span aria-hidden="true">Open to practical backend work · Enjoys calm Go services · Happy to discuss integrations</span>
+            </div>
+        </div>
 
-            <figure class="titleimg"><img src="./me.webp" title="Luke Smith">
-                <figcaption>Me.</figcaption>
-            </figure>
+        <section class="retro-panel about">
+            <h2>Mission Log · About</h2>
+            <p>I came from business automation where systems only mattered if they kept working. These days I build Go
+                services
+                with the same mindset: keep the APIs reliable, make integrations boring, and leave code my teammates can
+                trust.</p>
+        </section>
 
-            <p>I am Aziz Rustamov and this is my webpage.
-                There isn't a lot here but by the way, thanks for stopping on my website!</p>
-            <hr>
-            <br clear="all">
+        <section class="retro-panel experience">
+            <h2>Experience</h2>
+            <article>
+                <header>
+                    <h3>Golang Developer — Alif Tech</h3>
+                    <p class="timeline">2025–present</p>
+                </header>
+                <p>Building backend services for fintech products. Writing REST APIs, integrating services, maintaining
+                    clean Go
+                    code, and contributing to internal travel/airline integrations.</p>
+            </article>
+            <article>
+                <header>
+                    <h3>1C Developer — Standart Soft Models</h3>
+                    <p class="timeline">2021–2025</p>
+                </header>
+                <p>Automated business processes, integrated 1C with external services (SCADA, HR, billing, Soliq, POS),
+                    and built
+                    internal tools for analytics, inventory, HR dashboards, and digital signature login.</p>
+            </article>
+        </section>
 
-            <h2 id="my_stuff">My Education</h2>
+        <section class="retro-panel education">
+            <h2>Education Broadcast</h2>
+            <div class="edu-card">
+                <h3>Tashkent University of Information Technologies (TUIT)</h3>
+                <p>Bachelor’s in Software Engineering · Sep 2020 – Jul 2024 · GPA 4.13</p>
+                <p>Deep dives into algorithms, OS, architecture, project management, and databases.</p>
+            </div>
+            <div class="edu-card">
+                <h3>Alif Academy Uzbekistan</h3>
+                <p>Backend Engineering with Go · Feb 2025 – May 2025</p>
+                <p>Docker, PostgreSQL, GitHub flows, and two Go projects (including a team build).</p>
+            </div>
+        </section>
 
-            <p>
-                <strong>Bachelor's Degree in Software Engineering</strong>, 2020–2024
-                <br>Tashkent University of Information Technologies named after Muhammad al-Khwarizmi<br>
-                GPA: 4.13. Gained solid background in algorithms, data structures, operating systems, software architecture, project
-                management, and databases.
-            </p>
+        <section class="retro-panel skills">
+            <h2>Skills</h2>
+            <p>Go • PostgreSQL • REST APIs • Docker • Clean Architecture<br>1C Integration • Team Collaboration</p>
+        </section>
 
-            <hr>
-            <br clear="all">
-
-            <h2 id="my-career">My Career</h2>
-            <p>
-                <strong>1C Developer</strong>, 11/2020 – 06/2024<br>
-                <a href="https://orginfo.uz/en/organization/ffbc6bc591f0/">Standart Soft Models MChJ</a> – Tashkent, Uzbekistan
-            </p>
-            <ul>
-                <li>Designed business processes and database schemas; created BPMN diagrams for complex workflows</li>
-                <li>Integrated 1C systems with external services via REST API (JSON-RPC 2.0):
-                    <ul>
-                        <li>POS terminals, SCADA & HR systems</li>
-                        <li>SoliqServis & Einvoice (e-document exchange)</li>
-                        <li>Billing-to-Accounting KPI integration</li>
-                    </ul>
-                </li>
-                <li>Developed internal REST APIs for HR dashboards, asset inventory, and sales analytics</li>
-                <li>Optimized payroll algorithm (reduced execution time by 7 seconds)</li>
-                <li>Mentored 4 junior developers — 3 hired after building capstone projects (café order system, printing service, Telegram bot for payslips)</li>
-                <li>Implemented EIMZO-based digital signature login via WebSocket</li>
-                <li>Built a mid-sized order management system for a printing company</li>
-            </ul>
-
-        </article>
+        <section class="retro-panel contact">
+            <h2>Contact Console</h2>
+            <dl>
+                <dt>Telegram</dt>
+                <dd><a href="https://t.me/aziz_3651">t.me/aziz_3651</a></dd>
+                <dt>Email</dt>
+                <dd><a href="mailto:aziz.rustamov.mail@gmail.com">aziz.rustamov.mail@gmail.com</a></dd>
+                <dt>Location</dt>
+                <dd>Tashkent, Uzbekistan</dd>
+            </dl>
+        </section>
 
     </main>
+</div>
 
+<div class="sakura-container"></div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.querySelector(".sakura-container");
+
+        const createPetal = () => {
+            const petal = document.createElement("div");
+            petal.classList.add("sakura-petal");
+
+            const size = Math.random() * 0.7 + 0.3;
+            const fallDuration = Math.random() * 10 + 12;
+            const sway = Math.random() * 40 - 20;
+
+            // только боковые зоны
+            const isLeft = Math.random() < 0.5;
+
+            // левая зона: 0–25vw
+            // правая зона: 75–100vw
+            const left = isLeft
+                ? Math.random() * 25                // 0–25
+                : Math.random() * 25 + 75;          // 75–100
+
+            petal.style.left = `${left}vw`;
+
+            petal.style.setProperty("--size", size.toFixed(2));
+            petal.style.setProperty("--fall-duration", fallDuration.toFixed(1) + "s");
+            petal.style.setProperty("--sway", sway.toFixed(1) + "px");
+
+            container.appendChild(petal);
+
+            setTimeout(() => petal.remove(), fallDuration * 1000);
+        };
+
+        // create many petals smoothly
+        setInterval(createPetal, 220); // регулируй плотность
+    });
+</script>
 </body>
-
 </html>

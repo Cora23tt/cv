@@ -1,548 +1,324 @@
-.lw, dt img, dd img, p img, li img, h1 img, h2 img, h3 img, h4 img, dt img, td img, button img {
-	max-height: .8em;
-	max-width: 1em;
-	vertical-align: middle ;
+:root {
+    --sakura-pink: #f2c6de;
+    --sakura-plum: #cdb5ff;
+    --panel-border: #a8c4ff;
+    --panel-bg: rgba(23, 26, 52, 0.85);
+    --text-soft: #f6f2ff;
+    --ticker-bg: rgba(242, 198, 222, 0.12);
 }
 
-h1,h2,h3,h4,h5,h6 {
-	text-align: center ;
-}
-
-header {
-	text-align: center ;
-	font-family: "Fira Sans",sans ;
-	padding-bottom: 15pt ;
-}
-header h1 {
-	font-size: 30pt ;
-	margin-bottom: 0 ;
-}
-header h2 {
-	margin-top: 0 ;
-	font-style: italic ;
-	padding: .5em ;
-}
-
-h1 { color: chocolate ; }
-h2 { color: sandybrown ; }
-h3 { color: tan ; }
-h4 { color: wheat ; }
-h5, h6 { color: cornsilk ; }
-
-strong {
-	color: wheat ;
-}
-
-a {
-	color: #33bbff ;
-	text-decoration: none ;
-}
-
-@media ( pointer: coarse ) {
-li {
-	padding-bottom: .5em ;
-}
-}
-
-dt {
-	font-weight: bold ;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-	background: #1b1b1b ;
-	color: #fff ;
-	margin-bottom: 200px ;
-	font-family: "Garamond", Georgia, serif, 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji' ;
-}
-
-aside {
-	font-style: italic;
-	font-size: small ;
-	color: #ddd ;
-}
-
-main {
-	max-width: 800px ;
-	margin: auto ;
-}
-
-main > article {
-	margin-bottom: 0 ;
-	margin: auto ;
-}
-
-.taglist {
-	max-width: 400px ;
-	margin: auto ;
-	text-align: center ;
-	margin-bottom: 1em ;
-}
-
-.menuname {
-	display: none ;
-}
-
-.buttonlist {
-	display: none ;
-	position: absolute ;
-	bottom: 1em ;
-}
-
-footer {
-	max-width: 600px ;
-	margin-left: auto ;
-	margin-right: auto ;
-	text-align: center ;
-	clear: both ;
-}
-
-#tag_crypto:before { content: '💰' ; }
-#tag_economics:before { content: "📈" ; }
-#tag_lifestyle:before { content: "👨‍👩‍👦" ; }
-#tag_language:before { content: "🗣️" ; }
-#tag_linux:before { content: "🐃" ; }
-#tag_personal:before { content: "😎" ; }
-#tag_philosophy:before { content: "🎓" ; }
-#tag_religion:before { content:"☦️" ; }
-#tag_science:before { content:"🥼" ; }
-#tag_software:before { content: "🖥️" ; }
-#tag_technology:before { content: "⚙️" ; }
-#tag_tutorial:before { content: "📖" ; }
-#tag_tradition:before { content: "📜" ; }
-#tag_updates:before { content: "🆕" ; }
-#tag_politics:before { content: "👑" ; }
-#tag_history:before { content: "⏳" ; }
-#tag_recommended:before { content: "🌟" ; }
-
-.menuactive li {
-	background: #111 ;
-}
-
-@media (min-width: 1200px) {
-	.buttonlist {
-		display: block ;
-	}
-
-	.buttonlist img {
-		max-height: inherit ;
-		max-width: inherit ;
-		vertical-align: middle ;
-	}
-
-
-	.resright, .profile{
-		display: block ;
-		float: right;
-		clear: both ;
-		padding: 10px ;
-		max-width: 300px ;
-	}
-	.menuname {
-		display: inline-block ;
-	}
-
-}
-
-#tagcloud {
-	clear: both ;
-	padding: 0;
-	border-radius: 10px ;
-	text-align: center ;
-	margin: 0 auto ;
-	border: solid 1px ;
-	border-style: dashed ;
-	list-style: none ;
-}
-
-#tagcloud li {
-	display: inline-block ;
-}
-
-#tagcloud a {
-	display: block ;
-	width: auto ;
-	border-radius: 10px ;
-	padding: .25em ;
-	margin: 2px ;
-}
-
-#tagcloud a:hover {
-	box-shadow: 2px 2px 2px 2px black  ;
-}
-
-.titleimg {
-	align: center ;
-}
-
-.titleimg img {
-	margin: auto ;
-	max-width: 90% ;
-	max-height: 400px ;
-	display: block ;
-}
-
-code {
-	color: #0d0 ;
-	overflow-wrap: break-word ;
-}
-
-.crypto {
-	font-size: x-small ;
-}
-
-.resright {
-    margin: auto ;
-    display: block ;
-    text-align: center ;
-    max-width: 100% ;
-}
-
-.resright img {
-	max-height: 300px ;
-}
-
-.profile {
-	text-align: center ;
-	max-height: 250px ;
-}
-.profile img {
-	max-height: inherit ;
-	border-radius: 50px ;
-	max-width: 100% ;
-}
-
-figcaption {
-	text-align: center ;
-	display: block ;
-	font-style: italic ;
-}
-
-math {
-	display: block ;
-	text-align: center ;
-}
-
-sup {
-	vertical-align: top;
-	font-size: 0.6em;
-}
-
-.qr { max-width: 150px ; padding: 10px }
-
-li .summary {
-	display: none;
-}
-
-li:hover .summary {
-	display: block ;
-	font-style: italic ;
-}
-
-input, textarea {
-	background: #222 ;
-	color: white ;
-	margin: auto ;
-	border-color: #333 ;
-	font-size: large ;
-}
-
-
-#name {
-	max-width: 25em ;
-}
-#amount {
-	max-width: 25em ;
-}
-#message {
-	width: 100% ;
-}
-
-form {
-	margin: auto ;
-	width: 30em ;
-}
-
-pre {
-	border-radius: 20px ;
-	padding: 1em ;
-}
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: var(--text-soft);
+    background: radial-gradient(circle at top, #222b5b 0%, #0a0c1c 50%, #04030c 100%);
+    overflow-x: hidden;
+}
+
+a {
+    color: #aee7ff;
+    text-decoration: none;
+}
 
-.loc {
-	color: #777 ;
-	display: none ;
+a:hover {
+    text-decoration: underline;
+}
+
+.crt {
+    position: relative;
+    z-index: 6;
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crt::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.03) 0,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 3px
+    );
+    mix-blend-mode: screen;
+    opacity: 0.35;
+}
+
+.terminal-card {
+    width: min(960px, 100%);
+    background: rgba(6, 7, 20, 0.92);
+    border: 3px solid var(--sakura-plum);
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(205, 181, 255, 0.35), 0 0 60px rgba(242, 198, 222, 0.2);
+    z-index: 10;
+    position: relative;
 }
-
-.mainmenucont {
-	position: relative ;
-	text-align: center ;
-	height: 100px ;
-	width: 100px ;
-	display: inline-block ;
-
-}
-
-.menulink {
-	text-decoration: none ;
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.mainmenucont:hover {
-	background: darkmagenta ;
-	border-radius: 20px ;
+.avatar {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 3px double var(--sakura-pink);
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(205, 181, 255, 0.35);
 }
 
-.mainmenuimg {
-	height: 100px ;
-	width: 100px ;
+.hero-label {
+    color: #d7c9ff;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0;
 }
 
-.mainmenutext {
-	position: absolute ;
-	top: 50% ;
-	left: 50% ;
-	transform: translate(-50%, -50%) ;
-	font-size: 24px ;
-	color: white ;
-	text-shadow: 0px 0px 3px black ;
+h1 {
+    font-size: 2.5rem;
+    color: var(--text-soft);
+    margin: 0.2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.mainmenucont:hover .mainmenutext {
-	color: var(--lime) ;
+.tagline,
+.location {
+    margin: 0.2rem 0;
+    color: #d9e2ff;
 }
 
-.backforth {
-	animation: bf .5s linear both infinite alternate ;
-	position: absolute ;
+.music-player {
+    margin: 0 auto 1.25rem;
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes bf{
-	from{transform: translateX(.25em);}
-	to{transform: translateX(0em);}
+.music-player iframe {
+    border-radius: 4px;
+    box-shadow: 0 0 14px rgba(173, 136, 212, 0.35);
 }
 
-time {
-	font-family: monospace ;
-	color: #888 ;
-	font-size: 10pt ;
+.ticker {
+    margin: 0 auto 1.5rem;
+    border: 1px solid var(--sakura-plum);
+    background: var(--ticker-bg);
+    padding: 0.5rem 0;
+    overflow: hidden;
 }
 
-.soy {
-	animation: shake 2s ease-out;
-	animation-iteration-count: infinite;
-	text-align: center ;
+.ticker-track {
+    display: inline-flex;
+    gap: 3rem;
+    width: max-content;
+    animation: ticker-move 28s linear infinite;
+    padding-left: 0.5rem;
 }
 
-@keyframes shake {
-	0% { transform: translate(1px, 1px) rotate(0deg); }
-	10% { transform: translate(-1px, -2px) rotate(-1deg); }
-	20% { transform: translate(-3px, 0px) rotate(1deg); }
-	30% { transform: translate(3px, 2px) rotate(0deg); }
-	40% { transform: translate(1px, -1px) rotate(1deg); }
-	50% { transform: translate(-1px, 2px) rotate(-1deg); }
-	60% { transform: translate(-3px, 1px) rotate(0deg); }
-	70% { transform: translate(3px, 1px) rotate(-1deg); }
-	80% { transform: translate(-1px, -1px) rotate(1deg); }
-	90% { transform: translate(1px, 2px) rotate(0deg); }
-	100% { transform: translate(1px, -2px) rotate(-1deg); }
-	}
-
-input, textarea {
-	background: black ;
+.ticker span {
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #fde6f4;
 }
 
-.type_updates a, .type_updates {
-	color: #000303 ;
+@keyframes ticker-move {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
-
 
-/* For NEXTPREV.HTML */
-#prevart {
-	float: left ;
-	text-align: left ;
+.retro-panel {
+    border: 1px solid var(--panel-border);
+    background: var(--panel-bg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 0 12px rgba(4, 8, 26, 0.7);
 }
-#nextart {
-	float: right ;
-	text-align: right ;
-}
-#nextart,#prevart {
-	max-width: 33% ;
-}
 
-blockquote {
-	font-style: italic ;
-	font-size: large ;
+.retro-panel h2 {
+    margin: 0 0 0.8rem;
+    color: #aacdff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.05rem;
 }
-
 
-
-
-#buttondiv {
-	text-align: center ;
+p {
+    line-height: 1.6;
 }
 
-#buttonlist {
-	padding-left: 0 ;
+.experience article {
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
+    margin-top: 1rem;
 }
 
-#buttonlist li {
-	display: inline-block ;
-	height: 150px ;
-	width: 150px ;
-	position: relative ;
-	margin: auto ;
+.experience article:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
 }
 
-#buttonlist img {
-	height: 80% ;
-	width: 80% ;
-	max-height: none ;
-	max-width: none ;
-	position: absolute ;
-	left: 50% ;
-	transform: translateX(-50%);
+.experience header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
-
-#buttonlist .title, #buttonlist li:hover .desc {
-	display: block ;
-	position: absolute ;
-	color: white ;
-	width: 100% ;
-	text-align: center ;
-	top: 50%;
-  	transform: translateY(-50%);
-	border-radius: 1em ;
-	font-size: large ;
 
+.experience h3 {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 1.1rem;
 }
 
-#buttonlist .title {
-	font-size: xx-large ;
-	background-color: rgba(3,3,3,0.6) ;
+.timeline {
+    font-size: 0.9rem;
+    color: #b7c6ff;
+    margin: 0;
+    text-transform: uppercase;
 }
-#buttonlist li:hover .desc {
-	background-color: rgba(3,3,3,0.9) ;
-}
 
-#buttonlist li:hover .title, .desc, .tags {
-	display: none ;
+.education .edu-card {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(12, 15, 36, 0.9);
 }
 
-.vidcont {
-	position: relative;
-	overflow: hidden;
-	width: 100%;
-	padding-top: 56.25%;
+.education h3 {
+    margin: 0 0 0.25rem;
+    color: #f2f4ff;
 }
 
-.embeddedvid {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
+.skills p {
+    margin: 0;
+    line-height: 1.8;
 }
 
-.cryplist {
-	text-align: left ;
+.contact dl {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0.4rem 1rem;
+    margin: 0;
 }
 
-.cryplist li {
-	display: inline-block ;
-	white-space: nowrap ;
+.contact dt {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #c7dbff;
 }
 
-#linklist {
-	text-align: center ;
+.contact dd {
+    margin: 0;
 }
 
 
-#linklist {
-	padding-left: 0 ;
-}
+@media (max-width: 700px) {
+    .terminal-card {
+        padding: 1.5rem;
+    }
 
-#linklist li {
-	display: inline-block ;
-	height: 150px ;
-	width: 150px ;
-	position: relative ;
-}
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
 
-#linklist li a {
-	height: 100% ;
-	width: 100% ;
-	display: block ;
-}
+    .contact dl {
+        grid-template-columns: 1fr;
+    }
 
-#linklist img {
-	height: 80% ;
-	width: 80% ;
-	max-height: none ;
-	max-width: none ;
-	position: absolute ;
-	left: 50% ;
-	transform: translateX(-50%);
+    .ticker span {
+        letter-spacing: 0.05em;
+    }
 }
 
-#linklist .title, #linklist li:hover .desc {
-	display: block ;
-	position: absolute ;
-	color: white ;
-	width: 100% ;
-	text-align: center ;
-	top: 50%;
-  	transform: translateY(-50%);
-	border-radius: 1em ;
-	font-size: large ;
-}
 
-#linklist .title {
-	font-size: xx-large ;
-	background-color: rgba(3,3,3,0.6) ;
-}
+.sakura-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
 
-#linklist li:hover .desc {
-	background-color: rgba(3,3,3,0.9) ;
+    /* лепестки будут поверх затемняющего слоя и фона */
+    z-index: 5;
 }
 
-#linklist li:hover .title, .desc, .tags {
-	display: none ;
-}
+.sakura-petal {
+    /* дефолты, чтобы переменные всегда были */
+    --size: 0.8;
+    --fall-duration: 18s;
+    --sway: 0px;
 
-.menuurl {
-	color: green ;
-}
+    position: absolute;
+    top: -5vh;
+    width: calc(var(--size) * 20px);
+    height: calc(var(--size) * 14px);
 
-.articlelist {
-	font-size: 125% ;
-}
+    background: radial-gradient(
+            circle at 30% 30%,
+            #FFEFF4 0%, /* беловатый центр цветка */ #F9DCE5 50%, /* нежно-розовый */ #F6B7C8 100% /* насыщенный розовый */
+    );
 
-.articlelist li {
-	padding-bottom: .25em ;
-}
+    border-radius: 60% 40% 70% 30%;
+    opacity: 0.92;
 
-#inlinelinker {
-	font-size: x-large ;
-}
+    /* если хочешь чуть подсветки — раскомментируй */
+    /* filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35)); */
 
-#inlinelinker .desc {
-	display: inline-block ;
-	color: gray ;
+    animation: sakura-fall var(--fall-duration) linear infinite,
+    sakura-spin calc(var(--fall-duration) * 0.6) ease-in-out infinite;
 }
 
-#inlinelinker li:hover {
-	outline: 1px dotted gold ;
-}
 
-#iconmenu {
-	list-style: none ;
-	text-align: center ;
-	font-size: 48pt ;
-	margin: 0 ;
+/* Вертикальное падение */
+@keyframes sakura-fall {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.95;
+    }
+    100% {
+        transform: translateX(var(--sway)) translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-#iconmenu li {
-	display: inline ;
-	padding: .1em ;
-	margin: .1em ;
+/* Покачивание лепестка */
+@keyframes sakura-spin {
+    0% {
+        border-radius: 60% 40% 70% 30%;
+    }
+    50% {
+        border-radius: 40% 60% 30% 70%;
+    }
+    100% {
+        border-radius: 60% 40% 70% 30%;
+    }
 }
