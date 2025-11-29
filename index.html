@@ -10,6 +10,7 @@
     <title>Aziz Rustamov · Retro CV Lane</title>
     <link rel="canonical" href="https://cora23tt.github.io/cv/">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111298683">
 </head>
 
 <body>
@@ -115,13 +116,35 @@
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
     canvas.style.position = 'fixed'
+    canvas.style.top = 0
+    canvas.style.left = 0
+    canvas.style.zIndex = 2
+    canvas.style.pointerEvents = 'none'
+
     const ctx = canvas.getContext('2d')
 
     const TOTAL = 100
     const petalArray = []
 
+    // Detect mobile to reduce speed
+    const isMobile = window.innerWidth < 768
+    const SPEED_SCALE = isMobile ? 0.45 : 0.70   // падение СТАБИЛЬНОЕ
+
     const petalImg = new Image()
     petalImg.src = 'https://djjjk9bjm164h.cloudfront.net/petal.png'
+
+    // "Ветер", который влияет только на горизонтальный дрейф,
+    // но НЕ ускоряет падение вниз.
+    let windDirection = 0
+
+    function touchHandler(e) {
+        const pos = (e.clientX || (e.touches ? e.touches[0].clientX : 0))
+        windDirection = (pos / window.innerWidth - 0.5) * 2   // от -1 до +1
+    }
+
+    window.addEventListener('mousemove', touchHandler)
+    window.addEventListener('touchmove', touchHandler)
+
     petalImg.addEventListener('load', () => {
         for (let i = 0; i < TOTAL; i++) {
             petalArray.push(new Petal())
@@ -132,7 +155,7 @@
     function render() {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         petalArray.forEach(petal => petal.animate())
-        window.requestAnimationFrame(render)
+        requestAnimationFrame(render)
     }
 
     window.addEventListener('resize', () => {
@@ -140,38 +163,27 @@
         canvas.height = window.innerHeight
     })
 
-    let mouseX = 0
 
-    function touchHandler(e) {
-        mouseX = (e.clientX || e.touches[0].clientX) / window.innerWidth
-    }
-
-    window.addEventListener('mousemove', touchHandler)
-    window.addEventListener('touchmove', touchHandler)
-
-    // Petal class
     class Petal {
         constructor() {
+            this.reset(true)
+        }
+
+        reset(fromTop = false) {
             this.x = Math.random() * canvas.width
-            this.y = -Math.random() * canvas.height
+            this.y = fromTop ? -Math.random() * canvas.height : -50
+
             this.w = 25 + Math.random() * 15
             this.h = 20 + Math.random() * 10
             this.opacity = this.w / 40
             this.flip = Math.random()
 
-            this.xSpeed = 1.5 + Math.random() * 2
-            this.ySpeed = 1 + Math.random() * 1
+            this.xSpeed = 0.6 + Math.random() * 1.4   // мягкое боковое скольжение
+            this.ySpeed = 0.6 + Math.random() * 0.9   // стабильное падение
             this.flipSpeed = Math.random() * 0.03
         }
 
         draw() {
-            if (this.y > canvas.height || this.x > canvas.width) {
-                this.x = -petalImg.width
-                this.y = -Math.random() * canvas.height
-                this.xSpeed = 1.5 + Math.random() * 2
-                this.ySpeed = 1 + Math.random() * 1
-                this.flip = Math.random()
-            }
             ctx.globalAlpha = this.opacity
             ctx.drawImage(
                 petalImg,
@@ -183,9 +195,15 @@
         }
 
         animate() {
-            this.x += this.xSpeed + mouseX * 5
-            this.y += this.ySpeed + mouseX * 2
+            // Скорость НЕ зависит от мыши
+            this.x += (this.xSpeed + windDirection * 1.2) * SPEED_SCALE
+            this.y += this.ySpeed * SPEED_SCALE
             this.flip += this.flipSpeed
+
+            if (this.y > canvas.height || this.x > canvas.width + 50 || this.x < -50) {
+                this.reset()
+            }
+
             this.draw()
         }
     }
